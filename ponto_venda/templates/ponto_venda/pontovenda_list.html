@@ -1,0 +1,9 @@
+{% block content %}
+<h2>Lista de Pontos de Venda</h2>
+<ul>
+    {% for pontovenda in object_list %}
+    <li>{{ pontovenda.ponto }} - {{ pontovenda.cod_ponto }} <a href="{% url 'pontovenda-edit' pontovenda.pk %}">Editar</a> <a href="{% url 'pontovenda-delete' pontovenda.pk %}">Excluir</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'pontovenda-add' %}">Adicionar Ponto de Venda</a>
+{% endblock %}

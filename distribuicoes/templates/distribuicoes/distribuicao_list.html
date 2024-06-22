@@ -1,0 +1,9 @@
+{% block content %}
+<h2>Lista de Distribuições</h2>
+<ul>
+    {% for distribuicao in object_list %}
+    <li>{{ distribuicao.ponto.ponto }} - {{ distribuicao.cod_inicial }} a {{ distribuicao.cod_final }} (Rota: {{ distribuicao.rota }}) <a href="{% url 'distribuicao-edit' distribuicao.pk %}">Editar</a> <a href="{% url 'distribuicao-delete' distribuicao.pk %}">Excluir</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'distribuicao-add' %}">Adicionar Distribuição</a>
+{% endblock %}
